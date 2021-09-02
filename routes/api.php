@@ -46,4 +46,14 @@ Route::post('/json', function () {
 // Route::post('/profil', 'NamaController@namaFungsi');
 Route::post('/profil', 'App\Http\Controllers\ProfileController@index');
 
+// Route::get('nama', 'App\Http\Controllers\NamaFullController@index');
+// Route::post('nama', 'App\Http\Controllers\NamaFullController@store');
+// Route::get('nama/{id}', 'App\Http\Controllers\NamaFullController@show');
+// Route::put('nama/{id}', 'App\Http\Controllers\NamaFullController@update');
+// Route::delete('nama/{id}', 'App\Http\Controllers\NamaFullController@destroy');
+
+Route::resource('nama','App\Http\Controllers\NamaFullController')->except('create','edit');
+
+Route::resource('wongtuas', 'App\Http\Controllers\ParentController');
+
 
